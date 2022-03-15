@@ -1,0 +1,144 @@
+body{
+    background: black;
+    color : white;
+}
+
+.ajoutfilmbase{
+    width: 100%;
+    background-color: black;
+    color : white;
+    border : 1px solid red;
+    padding : 20px;
+}
+
+.ajoutfilmbase a{
+    text-decoration: none;
+    color : red;
+}
+
+.ajoutfilmbase a:hover{
+    text-decoration: none;
+    color : white;
+}
+
+.ajoutfilmbase h1, h2{
+    text-align: center;
+}
+
+.ajoutfilmbase h1 a{
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.ajoutfilmbase h2{
+    text-align: center;
+    margin-top : 30px;
+}
+
+.ajoutfilmbase span{
+color : #D11328
+}
+
+.ligneajout{
+    width: 100%;
+    /* border : 1px solid blue; */
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top : 30px;
+    margin-bottom : 15px;
+}
+
+.ligneajout2{
+    width: 100%;
+    /* border : 1px solid blue; */
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top : 30px;
+}
+
+.listeacteur{
+    width: 100%;
+    /* border : 1px solid yellow; */
+    text-align: center;
+    margin : 20px;
+    font-size : 20px;
+}
+
+.listeacteur i{
+    font-size: 15px;
+    color : red;
+}
+
+.ligneajouttitre{
+    width: 50%;
+    /* border : 2px solid green; */
+    padding : 10px;
+    margin-right : 10px;
+    text-align: right;
+}
+
+.ligneajoutform{
+    width: 50%;
+    /* border : 2px solid orange; */
+    padding : 10px;
+    margin-left : 10px;
+    text-align: left;
+}
+
+input{
+    outline: none;
+    background: none;
+    /* border : none; */
+    border : 1px solid #D11328;
+    color : white;
+}
+
+select{
+    outline: none;
+    background: none;
+    /* border : none; */
+    border : 1px solid #D11328;
+    background-color: black;
+    color : white;
+}
+
+textarea{
+    outline: none;
+    background: none;
+    /* border : none; */
+    border : 1px solid #D11328;
+    background-color: black;
+    color : white;
+}
+
+.check1
+{
+    width: 10%;
+    text-align: left;
+    margin-left : auto;
+    margin-right: auto;
+}
+
+
+hr.style-two {
+    border: 0;
+    width: 50%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : 20px;
+    margin-bottom : 20px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+.basegenres
+{
+    width: 100%;
+    text-align: center;
+    /* border : 2px solid red; */
+    padding-left: auto;
+    padding-right: auto;
+}

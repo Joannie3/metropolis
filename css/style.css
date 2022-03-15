@@ -1,0 +1,1321 @@
+*{
+    margin : 0px;
+    padding : 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    background: black;
+    color : white;
+    margin : 0;
+    padding : 0;
+}
+
+
+nav
+{
+width: 100%;
+position : sticky;
+top : 0;
+z-index: 5000;
+color: white;
+background-color: black;
+font-family: 'Open Sans', sans-serif;
+padding-top : 10px;
+padding-bottom : 10px;
+}
+
+
+.menug{
+        width: 100%;
+        height: 40px;
+        position: relative;
+    }
+
+.navlogo img {
+    width: 100%;
+    height: 100%;
+}
+
+.navlogo {
+    height: 90%;
+    position : absolute;
+    top : 0.5%;
+    left : 5%;
+}
+
+.navmenu {
+    width: 70%;
+    height: 35px;
+    position : absolute;
+    top : 0.5%;
+    right : 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size : 20px;
+}
+
+.navmenu a{
+text-decoration: none;
+color : white;
+}
+
+.navmenu a:hover{
+    text-decoration: none;
+    color : #D11328;
+    }
+
+    .nav-burger{
+        display : none;
+    } 
+
+    /* debut du slider */
+.slider{
+    width: 100%;
+    height: 100vh; /*calc(100vh - 80px); permet de definir la hauteur du slider */
+    position: relative;
+    background-color: black;
+}
+
+.slider img{
+    /* object-fit: cover; */
+    height: 100%;
+    width: 100%;
+    position: absolute; /*ici on met les image sur les autres graces a position absolute et top et left 0 */
+    top: 0;
+    left: 0; /* à 50%/50% du parent référent */
+    opacity: 0; /*ici on met opacité a zero pour ttes le images*/
+    transition: opacity .5s;
+}
+
+.slider img.active{
+    opacity: 1; /*ici on dit que si la propriete est active alors on met opacity 1*/
+}
+
+.slider2{
+    display : none;
+}
+
+.img__description{
+    position : absolute;
+    top : 0;
+    left: 0;
+    background-color: black;
+    color : #D11328;
+    font-size : 40px;
+    font-weight: bold;
+    opacity: 0; /*ici on met opacité a zero pour ttes le images*/
+    transition: opacity .5s;
+    padding : 10px;
+}
+
+.slider .img__description.active{
+    opacity: 1; /*ici on dit que si la propriete est active alors on met opacity 1*/
+}
+
+/* commentaire a faire sur mon slide */
+/* .un{
+    top : 10%;
+    left : 25%;
+}
+
+.deux{
+    bottom : 25%;
+    left : 35%;
+}
+
+.trois{
+    bottom : 25%;
+    left : 35%;
+} */
+
+.suivant, .precedent /* ici permet de prendre 2 classes et de definir les mm proprietes class, class*/
+{
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    top : 50%; /* 50% du haut */
+    transform: translateY(-50%); /*permet de decaler les boutons pour les mettre au bon endroit à 50%*/ 
+    cursor: pointer;
+    background:none;
+}
+
+/*ici on dit que le bouton suivant est a droite de l'image et pareil pour le precedent*/
+.suivant{
+    right : 1rem
+}
+
+.precedent{
+    left : 1rem
+}
+
+/* fin de mon slider */
+
+
+/* debut du slider  */
+
+.carousel{
+    width: 100%;
+    height: 100vh;
+    perspective: 250px;
+    border : 2px solid yellow;
+}
+
+.carousel .carousel-item{
+    width: 450px;
+}
+
+/* fin du slider  */
+
+
+/* fin du slider */
+
+
+/* nav{
+width: 100%;
+position : sticky;
+top : 0;
+z-index: 5000;
+color: white;
+background-color: black;
+}
+
+.menug{
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+.menug a{
+    text-decoration: none;
+    color : white;
+}
+
+.menug a:hover{
+    text-decoration: none;
+    color : red;
+    font-size : 20px;
+} */
+
+
+/* debut  de ma premiere ligne */
+.indexlogo{
+    width: 100%;
+    height: 100vh;/* permet de prendre la hauteur de lecran*/
+    display: flex;
+    flex-direction: row;
+}
+
+.indexlogo img{
+    width: auto;
+    height: 100vh;
+}
+
+.indeximagegauche{
+    width: 30%;
+    overflow: hidden;
+}
+
+.indexpresentationdroite{
+    width: 70%;
+    background: black;
+    color : white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding : 20px;
+}
+
+.indexpresentationdes p{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    }
+
+.indexpresentationtitre{
+    font-family: 'Roboto', sans-serif;
+    color : white;
+    font-size : 55px;
+    width: 100%;
+    text-align: center;
+    }
+
+    .indexpresentationdes{
+        color:white;
+    }
+    
+
+.indexpresentationtitre span, .cinechezvoustitre span{
+    color : #D11328;
+}
+
+.seperationhr
+{
+    width: 100%;
+    height: 10px;
+    background-color: black;
+}
+
+
+hr.style-two {
+    border: 0;
+    width: 50%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+hr.style-two{
+        border: 0;
+        width: 50%;
+        height: 1px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom : 15px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+
+}
+
+.indexco{
+    /* border : 2px solid yellow; */
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding : 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.indexco a{
+    text-decoration: none;
+    color : #D11328;
+    background-color: rgba(255, 255, 255, 0);
+    border : 2px solid #D11328;
+    border-radius: 20px;
+    padding : 5px 15px 5px 15px;
+
+}
+
+.indexco a:hover{
+    text-decoration: none;
+    color : white;
+    background: #D11328;
+}
+
+
+/* .indexinscription{ */
+    /* border : 2px solid red; */
+/* } */
+
+/* .indexconnexion{ */
+    /* border : 2px solid green; */
+/* } */
+
+/* fin de ma premiere ligne */
+
+.cinechezvous{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: black;
+    padding-top : 50px;
+    padding-bottom : 50px;
+}
+
+.cinechezvoustexte
+{
+    width: 60%;
+}
+
+.cinechezvoustitre{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 35px;
+    text-align: left;
+    padding-left: 10%;
+
+}
+
+.cinechezvousimage img
+{
+    width: 100%;
+    height: 100%;
+
+}
+
+.cinechezvousimage
+{
+    width: 50%;
+    height: auto;
+}
+
+.cinechezvousdescription{
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin-top : 50px;
+    text-align: left;
+    padding-left: 10%;
+}
+
+/* fin de la ligne deadpool */
+
+.metropolis{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: black;
+    color: white;
+    padding-top : 50px;
+    padding-bottom : 50px;
+}
+
+.metropolisimage{
+    width: 40%;
+}
+
+.metropolisimage img{
+    width: 100%;
+    height: 100%;
+}
+
+.metropolisdescription{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.titre1, .titre2{
+    text-align: left;
+}
+
+.titre2{
+    padding-right : 100px;
+}
+
+/* fin de la ligne des enfants*/
+
+
+
+/* debut de mon carrousel */
+
+/* debut de mon carrousel */
+
+.carrousel{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: clip;
+    position: relative;
+    /* border : 2px solid white; */
+
+}
+
+.conteneurcarrousel{
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    transform: translateX(40px); /* mettre -200px par defaut*/
+    transition-duration: 0.8s;
+    transition-delay : 0.1s;
+    /* border : 2px solid yellow; */
+} 
+
+
+
+.img__carrousel
+{
+    width: 300px;
+    margin : 15px;
+    /* border : 2px solid rgb(255, 0, 212); */
+    position : relative;
+    z-index: 50;
+
+}
+
+.img__carrousel .desc_film_c i{
+    font-size : 25px;
+    color : red;
+}
+
+.image_films_c{
+    width: 100%;
+    /* border : 2px solid orange; */
+    width: auto;
+    -webkit-box-shadow: 5px 20px 8px -13px rgba(255, 0, 0, 0.267); 
+    box-shadow: 5px 20px 8px -13px rgba(255, 0, 0, 0.267); 
+}
+
+
+.desc_film_c{
+    display: none;
+    color : white;
+    background-color: black;
+    /* border : 2px solid blue; */
+    margin-top : -5px;
+    padding : 10px 5px 10px 10px;
+    -webkit-box-shadow: 5px 12px 15px 7px rgba(168,0,0,0.32); 
+    box-shadow: 5px 12px 15px 7px rgba(168,0,0,0.32); 
+}
+
+
+
+.carrousel  .conteneurcarrousel .img__carrousel .image_films_c img{
+    width: 100%;
+    height: auto;    
+    position :relative;
+    /* -webkit-box-shadow: 18px 18px 8px -13px rgba(255, 0, 0, 0.267); 
+    box-shadow: 18px 18px 8px -13px rgba(255, 0, 0, 0.267);  */
+    /* border : 2px solid red; */
+}
+
+
+
+.suivant2, .precedent2 /* ici permet de prendre 2 classes et de definir les mm proprietes class, class*/
+{
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    top : 50%; /* 50% du haut */
+    transform: translateY(-50%); /*permet de decaler les boutons pour les mettre au bon endroit à 50%*/ 
+    cursor: pointer;
+    background:none;
+}
+
+/*ici on dit que le bouton suivant est a droite de l'image et pareil pour le precedent*/
+.suivant2{
+    right : 1rem;
+}
+
+.precedent2{
+    left : 1rem;
+}
+
+
+.titrecarrousel
+{
+    color : white;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left : 40px;
+    margin-top : 100px;
+}
+
+.titrecarrousel:first-child
+{
+    color : white;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left : 20px;
+    margin-top : 50px;
+}
+
+.titrecarrousel span
+{
+    color : #D11328;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* parallax */
+
+.top {
+    height: 0px;
+    width: 100%;
+}
+
+.parallax1 {
+    background: url(../img/accueil/cinebobinenb3.png);
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+    background-size: 1000px;
+    background-position: center;
+}
+
+.parallax1 img{
+    width: 100%;
+    height: 100%;
+}
+
+.middle {
+    height: 0px;
+    width: 100%;
+}
+
+/* fin parallax  */
+
+
+/* debut de ma page film  */
+
+.fondecranfilm{
+    width: 100%;
+}
+
+.fondfilm{
+    width: 100%;
+    height: calc(100vh - 60px);
+    /* position: relative; */
+}
+
+.fondfilm img{
+    width: 100%;
+    height: 100%;
+}
+
+ .nomdufilm{
+    position: absolute;
+    bottom: 2%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    background: black;
+    color :#D11328;
+    font-size : 50px;
+    padding : 15px;
+    border-radius: 25px;
+} 
+
+/* ici on gere le systeme de favoris*/
+.favoris{
+    width: 100%;
+    height: 30px;
+    padding-top : 10px;
+    text-align: center;
+}
+
+.rouge{
+    color :#D11328;
+}
+
+
+.informationfilm{
+width: 100%;
+background-color: black;
+color : white;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+font-family: 'Open Sans', sans-serif;
+margin: 20px 0 20px 0;
+}
+
+.informationresume .delete{
+    color : red;
+}
+
+.informationtitre{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom : 10px;
+}
+
+.informationresume{
+    width: 25%;
+    padding : 20px;
+    text-align: left;
+    margin-left : 15px;
+    margin-right : 15px;
+    border-left : 1px solid white;
+    border-top : 1px solid white;
+    /* border-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    border-image-slice: 1; */
+}
+
+.informationresume a{
+    color : white;
+    text-decoration: none;
+}
+
+.informationinfo{
+    width:50%;
+    padding : 20px;
+    text-align: center;
+    margin-left : 15px;
+    margin-right : 15px;
+    /* border-right : 2px solid blue;
+    border-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    border-image-slice: 1; */
+}
+
+.informationacteurs{
+    width: 25%;
+
+    padding : 20px;
+    text-align: left;
+    margin-left : 15px;
+    margin-right : 15px;
+    border-right : 1px solid white;
+    border-bottom : 1px solid white;
+    /* border-right : 2px solid blue;
+    border-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    border-image-slice: 1; */
+}
+
+
+.bandeannonce{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video2{
+    padding : 20px;
+}
+
+/* fin de ma page film  */
+
+
+/* inscription */
+
+.inscription{
+    background: black;
+    width: 100%;
+    height: 100vh;
+    /* border : 2px solid yellow; */
+    display: flex;
+    flex-direction: row;
+}
+
+.inscriptionimageg
+{
+    /* border : 2px solid red; */
+    width: 30%;
+    height: 100vh;
+}
+
+.inscriptionimageg img{
+width: auto;
+height: 100%;
+}
+
+.inscriptionformulaire1
+{
+    width: 70%;
+    color : white;
+    /* border : 2px solid blue;   */
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inscriptionformulaire1 span{
+    color : #D11328;
+}
+
+.inscriptionensemble{
+    width:  60%;
+    border : 1px solid #D11328;
+    border-radius: 20px;
+    padding : 20px;
+}
+
+.inscriptionensemble a {
+    color : white;
+    text-decoration: none;
+}
+
+
+.inscriptioncadre{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding : 5px;
+    font-family: 'Open Sans', sans-serif;
+    /* border : 2px solid green; */
+}
+
+.inscription button{
+    margin-left : auto;
+    margin-right: auto;
+    background: none;
+    border: none;
+    outline: none;   
+    color : white;
+    margin-top : 25px;
+    padding : 10px;
+    font-size: 15px;
+    border-bottom : 1px solid #D11328;
+    border-right : 1px solid #D11328;
+}
+
+.inscription button:hover{
+    margin-left : auto;
+    margin-right: auto;
+    background: none;
+    border: none;
+    outline: none;   
+    color : #D11328;
+    margin-top : 25px;
+    border-bottom : 0px solid #D11328;
+    border-right : 0px solid #D11328;
+    border-top : 1px solid white;
+    border-left : 1px solid white;
+}
+
+.titreinscription{
+    font-size : 20px;
+    font-weight: bold;
+    margin-bottom : 25px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    /* border : 2px solid white; */
+}
+
+.formulairelabel{
+    /* border : 2px solid red; */
+    width: 35%;
+    height: 35px;
+    padding : 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.formulaireinput{
+    /* border : 2px solid orange; */
+    width: 65%;
+    height: 35px;
+    padding : 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.vote {
+    padding : 5px;
+    background: black;
+    color : white;
+    border: none;
+    outline: none;
+    border-bottom : 1px solid #D11328;
+}
+
+.inscription input{
+    padding : 5px;
+    background: black;
+    color : white;
+    border: none;
+    outline: none;
+    border-bottom : 1px solid #D11328;
+}
+
+/* fin inscription  */
+
+
+/*Commentaires*/
+
+.ensemblecommentaires
+{
+    padding : 20px;
+    text-align: center;
+}
+
+.ensemblecommentaires span{
+    color : red;
+}
+
+.ensemblecommentaires i{
+    color : red;
+}
+
+.titrecommentaires
+{
+    text-align: center;
+    font-size: 25px ;
+    margin-bottom : 15px;
+}
+
+.ensemblecommentaires textarea{
+    background: black;
+    border : 1px solid red;
+    color : white;
+
+    padding : 5px;
+}
+
+.ensemblecommentaires input{
+    padding : 5px;
+    background: black;
+    color : white;
+    border: none;
+    outline: none;
+    border-bottom : 1px solid #D11328;
+}
+
+.divtextarea
+{
+    width: 40%;
+    margin-left : auto;
+    margin-right : auto;
+}
+
+.touscommentaires{
+    width: 60%;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+/*footer*/
+
+footer{
+width: 100%;
+display: flex;
+flex-direction: column;
+/* justify-content: space-around; */
+background: black;
+padding-top : 40px;
+padding-bottom : 40px;
+}
+
+.footerligne1{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.footerligne2{
+    color : white;
+    text-align: center;
+    padding : 20px;
+}
+
+footer i{
+    color : #D11328;
+    font-size: 25px;
+}
+
+footer span{
+    color : #D11328;
+}
+
+.titrefooter{
+    color : white;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom : 10px;
+}
+
+
+.televisions, .ordinateurs, .mobilesettablettes, .consolesdejeux{
+    width: calc(100%/4);
+    color : white;
+    text-align: center;
+    border-right : 2px solid blue;
+    border-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    border-image-slice: 1; 
+    }
+
+/* partie recherche  */
+
+.recherchebase{
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.recherchebase h1{
+    text-align: center;
+    font-size: 25px;
+}
+
+.barrerecherche{
+    /* border : 2px solid green; */
+    margin-top : 20px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.barrerecherche input{
+    font-size: 35px;
+    outline: none;
+    background: none;
+    border: 1px solid white;
+    color : white;
+}
+
+.barrerecherche .boutonr{
+    font-size: 35px;
+    background: black;
+    color : white;
+    border : 1px solid white;
+    margin-left : 15px;
+} 
+
+.resultats{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : 25px;
+    /* color: #D11328; */
+}
+
+.resultats ul{
+   list-style: none;
+}
+
+.nbresultats{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : 50px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 0;
+    color: white;
+}
+
+.imagerecherche{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.imagerecherchetitre{
+    display: block;
+    position: absolute;
+    top : 0;
+    left : 0;
+    font-size: 20px;
+    padding : 5px;
+    background: black;
+    color: #D11328;
+}
+
+/* .imageresultat:hover .imagerecherchetitre{
+    display: block;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    font-size: 20px;
+    padding : 5px;
+}
+
+.imagerecherchetitre{
+    display: none;
+    position: absolute;
+    top : 0;
+    left : 0;
+    font-size: 20px;
+    padding : 5px;
+} */
+
+
+.imageresultat
+{
+    width: 25%;
+    height: auto;  
+    margin : 10px;
+    position: relative;
+} 
+
+.imageresultat a{
+    text-decoration: none;
+    color : white;
+}
+
+.imageresultat img{
+    width: 100%;
+    height: 100%;
+}
+/* fin de recherche  */
+
+
+@media all and (max-width: 1051px) {
+
+    .indeximagegauche{
+        width: 25%;
+    }
+    
+    .indexpresentationdroite{
+        width: 75%;
+    }
+
+    .cinechezvous {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+   
+}
+
+
+
+
+@media all and (max-width: 768px) {
+
+    .indexco {
+        /* border: 2px solid yellow; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 20%;
+
+    }
+
+    .indeximagegauche{
+        display : none;
+    }
+
+    .indexpresentationdroite{
+        width: 100%;
+    }
+
+    .cinechezvous {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cinechezvoustitre {
+        text-align: center;
+    }
+
+    .cinechezvousdescription {
+                text-align: center;   
+    }
+
+    .cinechezvousimage
+    {
+    width: 40%;
+    height: auto;
+    margin-top : 50px;
+    }
+
+    .metropolis {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .titre1, .titre2 {
+        text-align: center;
+    }
+
+    .titre2 {
+   padding-right: 0px; 
+}
+
+.metropolisimage{
+    width: 40%;
+    margin-top : 50px;
+}
+
+/* responsvie de mon footer  */
+
+footer{
+    padding-top : 0px;
+}
+
+.footerligne1 {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.titrefooter {
+width: 60%;
+margin : 0px;
+margin-bottom : 20px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.televisions, .ordinateurs, .mobilesettablettes, .consolesdejeux {
+    width: 100%;
+    border-bottom: 2px solid blue;
+    border-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    border-image-slice: 1;
+    margin-top : 20px;
+}
+
+.seperationhr2
+{
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    margin-top : 15px;
+}
+
+hr.style-two2 {
+    border: 0;
+    width: 50%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+} 
+
+/* fin responsvie de mon footer  */
+
+
+/* slider  */
+.slider{
+    display : none;
+}
+
+.slider2{
+    display : block;
+    width: 100%;
+    height: 100vh; /*calc(100vh - 80px); permet de definir la hauteur du slider */
+    position: relative;
+    background-color: black;
+}
+
+.slider2 img{
+    /* object-fit: cover; */
+    height: 100%;
+    width: 100%;
+    position: absolute; /*ici on met les image sur les autres graces a position absolute et top et left 0 */
+    top: 0;
+    left: 0; /* à 50%/50% du parent référent */
+    opacity: 0; /*ici on met opacité a zero pour ttes le images*/
+    transition: opacity .5s;
+}
+
+.slider2 img.active{
+    opacity: 1; /*ici on dit que si la propriete est active alors on met opacity 1*/
+}
+
+.suivant3, .precedent3 /* ici permet de prendre 2 classes et de definir les mm proprietes class, class*/
+{
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    top : 50%; /* 50% du haut */
+    transform: translateY(-50%); /*permet de decaler les boutons pour les mettre au bon endroit à 50%*/ 
+    cursor: pointer;
+}
+
+/*ici on dit que le bouton suivant est a droite de l'image et pareil pour le precedent*/
+.suivant3{
+    right : 1rem
+}
+
+.precedent3{
+    left : 1rem
+}
+
+/* fin du slider  */
+
+/* navbar reponsive */
+
+.navmenu{
+    display : none;
+}
+
+.navlogo {
+    height: 50%;
+}
+
+.nav-burger{
+    display : block;
+    position : absolute;
+    right : 20px;
+    text-align: right;
+    padding-top : 1%;
+    font-size: 25px;
+    width: 100%;
+    
+}
+
+.nav-burger-list{
+    display: none;
+    margin-top: 0px;
+    background-color: black;
+}
+
+.nav-burger-list2{
+    display: flex;
+    flex-direction: column;
+    margin-top : 12px;
+    text-align: right;
+    padding-right : 15px;
+    padding-bottom : 15px;
+    font-weight: bold;
+    
+}
+
+.nav-burger-list a{
+width: 150px;
+font-size : 15px;
+padding-bottom : 10px;
+text-decoration: none;
+color : #D11328;
+padding-bottom: 15px;
+}
+
+/* fin de ma navbar responsive  */
+
+
+/* debut de mon carrousel  */
+.carrousel img {
+    width: 75%;
+}
+
+
+/* inscription  */
+
+.inscription {
+    height: auto;
+}
+
+
+.inscriptionimageg {
+display : none;
+}
+
+.inscriptionformulaire1 {
+    width: 100%;
+}
+
+.inscriptionensemble {
+margin-top : 50px;
+margin-bottom : 50px;
+}
+
+.inscriptioncadre {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.formulairelabel {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.formulaireinput {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* fin de mon inscription  */
+
+}
+
+/* #D11328 rouge */
