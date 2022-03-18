@@ -115,8 +115,6 @@ session_start();
                 // lastInsertId permet de recuperer le dernier ID qu'on a inserer dans la bdd
 
 
-                echo "Félicitation, votre inscription est validé";
-
                 // ici on connecte l'utilisateur
 
                                
@@ -133,6 +131,10 @@ session_start();
 
                                //ici le membre est connecté du coup on le redirige vers la page film connecte.php
                                header("Location: listefilm.php");
+
+                               
+
+                echo "Félicitation, votre inscription est validé";
                
 
             }

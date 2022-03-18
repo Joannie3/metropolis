@@ -26,7 +26,11 @@ require_once "includes/bddconnexion.php";
 
 <body>
 
+
     <?php include('includes/navbar.php');
+
+    
+
 
     // la table avoir acteur = aa et acteur = a et film = f
     // ou id acteur de la table acteur = id acteur de la table avoir acteur
@@ -53,6 +57,8 @@ require_once "includes/bddconnexion.php";
 
     ?>
 
+
+
     <div class="container">
 
         <div class="fondecranfilm">
@@ -73,11 +79,12 @@ require_once "includes/bddconnexion.php";
 
                     $sqlfavoris1 = "SELECT COUNT(*) FROM avoir_favoris WHERE id_films=:id_films AND id_membres=:id_membres";
                     $requetefavoris1 = $db->prepare($sqlfavoris1);
+                    $requetefavoris1->execute(
+                        array(
+                            ":id_films" => $_GET["id_film"], 
+                            ":id_membres" => $id_membres
+                        ));
 
-                    $requetefavoris1->bindValue(":id_films", $_GET["id_film"], PDO::PARAM_INT);
-                    $requetefavoris1->bindValue(":id_membres", $id_membres, PDO::PARAM_INT);
-
-                    $requetefavoris1->execute();
                     $nombrefavorisp = $requetefavoris1->fetchColumn();
 
                     if ($nombrefavorisp >= 1) {
@@ -112,11 +119,11 @@ require_once "includes/bddconnexion.php";
 
                         $sqlsupprfavoris = "DELETE FROM `avoir_favoris` WHERE id_films=:id_films AND id_membres=:id_membres";
                         $requetesupprfavoris = $db->prepare($sqlsupprfavoris);
-
-                        $requetesupprfavoris->bindValue(":id_films", $_GET["id_film"], PDO::PARAM_INT);
-                        $requetesupprfavoris->bindValue(":id_membres", $id_membres, PDO::PARAM_INT);
-
-                        $requetesupprfavoris->execute();
+                        $requetesupprfavoris->execute(
+                            array(
+                                ":id_films" => $_GET["id_film"],
+                                ":id_membres" =>  $id_membres
+                            ));
 
                         echo '<div class="rouge">Le film est supprimé de vos favoris</div>';
                     } else {
@@ -126,28 +133,27 @@ require_once "includes/bddconnexion.php";
                 
                 if ($_GET["action"] == "note") {
 
-                    $sqlnoteperso = "SELECT * FROM notation WHERE id_membres=".$_SESSION["membres"]["id"]." AND id_films=".$_GET["id_film"]."";
+                    $sqlnoteperso = "SELECT * FROM notation WHERE id_membres=:id_membre AND id_films=:id_films";
                     $requetenoteperso = $db->prepare($sqlnoteperso);
-                    $requetenoteperso->execute();
+                    $requetenoteperso->execute(
+                        array(
+                            ":id_membre" => $_SESSION["membres"]["id"],
+                            ":id_films" => $_GET["id_film"]
+                        ));
                     $affichenotecountperso = $requetenoteperso->rowCount();  
 
                     $notemise = $_POST["note"];
 
                     if ($notemise > '5') {
-                        echo "Désolé il y a une erreur dans le traitement de la note";
+                        echo '<div class="rouge">Désolé il y a une erreur dans le traitement de la note</div>';
                     }
                     if ($notemise < '1') {
-                        echo "Désolé il y a une erreur dans le traitement de la note";
+                        echo '<div class="rouge">Désolé il y a une erreur dans le traitement de la note</div>';
                     }
                     else {
 
                         if ($affichenotecountperso >= 1) { echo " Vous avez déjà voter pour ce film.";}
                         if ($affichenotecountperso == 0) { 
-
-
-                     
-                    
-
                     // on ajoute dans notation l'id du film, l'id du membre et la note
 
                     $sqlfavoris = "INSERT INTO `notation`(`note_notation`, `id_films`, `id_membres`) 
@@ -170,9 +176,13 @@ require_once "includes/bddconnexion.php";
 
                 if ($_GET["action"] == "notesuppr") {
 
-                    $sqlsupprnote = "DELETE FROM notation WHERE id_membres =".$_SESSION["membres"]["id"]." AND id_films=".$_GET["id_film"]."";
+                    $sqlsupprnote = "DELETE FROM notation WHERE id_membres =:id_membres AND id_films=:id_films";
                     $requetesupprnote = $db->prepare($sqlsupprnote);
-                    $requetesupprnote->execute();
+                    $requetesupprnote->execute(
+                        array(
+                            ":id_membres" => $_SESSION["membres"]["id"],
+                            ":id_films" => $_GET["id_film"],
+                        ));
                     $affichesupprnote = $requetesupprnote->fetch();
 
                     echo "Votre note est supprimé";
@@ -196,9 +206,12 @@ require_once "includes/bddconnexion.php";
 
                 $infofilm2 = "SELECT * FROM `films` f, `avoir_genres` ag, `genres` g 
                 WHERE g.id_genres = ag.id_genres and ag.id_films = f.id_films 
-                AND f.id_films = " . $_GET["id_film"] . "";
+                AND f.id_films = :id_film";
                 $requeteinfofilm2 = $db->prepare($infofilm2);
-                $requeteinfofilm2->execute();
+                $requeteinfofilm2->execute(
+                    array(
+                        ":id_film" => $_GET["id_film"]
+                    ));
                 $afficheinfofilm22 = $requeteinfofilm2->fetchAll();
 
                 $affichegenre = implode(", ", array_map(function ($el) { return $el["genre_genres"];}, $afficheinfofilm22)); // string(20) "lastname,email,phone"
@@ -218,11 +231,11 @@ require_once "includes/bddconnexion.php";
 
                 $sqlfavoris2 = "SELECT COUNT(*) FROM avoir_favoris WHERE id_films=:id_films AND id_membres=:id_membres";
                 $requetefavoris2 = $db->prepare($sqlfavoris2);
-
-                $requetefavoris2->bindValue(":id_films", $_GET["id_film"], PDO::PARAM_INT);
-                $requetefavoris2->bindValue(":id_membres", $id_membres, PDO::PARAM_INT);
-
-                $requetefavoris2->execute();
+                $requetefavoris2->execute(
+                    array(
+                        ":id_films" => $_GET["id_film"],
+                        ":id_membres" => $id_membres
+                    ));
                 $nombrefavorisp2 = $requetefavoris2->fetchColumn();
 
                 if ($nombrefavorisp2 >= "1") {
@@ -240,9 +253,12 @@ require_once "includes/bddconnexion.php";
                 ?>
                 <br><br>
                 <?php 
-                $sqlnote = "SELECT * FROM notation WHERE  id_films=".$_GET["id_film"]."";
+                $sqlnote = "SELECT * FROM notation WHERE  id_films=:id_films";
                 $requetenote = $db->prepare($sqlnote);
-                $requetenote->execute();
+                $requetenote->execute(
+                    array(
+                        ":id_films" =>$_GET["id_film"]
+                    ));
                 $affichenotecount = $requetenote->rowCount();  
                 $affichenotecount2 = $requetenote->columnCount();  // nombre total de vote 
                 $affichenote = $requetenote->fetch();
@@ -253,9 +269,12 @@ require_once "includes/bddconnexion.php";
                 $affichenotecountperso = $requetenoteperso->rowCount();  
 
 
-                $sqlnotesomme = "SELECT SUM(`note_notation`) as totalnote FROM notation WHERE id_films=".$_GET["id_film"]."";
+                $sqlnotesomme = "SELECT SUM(`note_notation`) as totalnote FROM notation WHERE id_films=:id_films";
                 $requetenotesomme = $db->prepare($sqlnotesomme);
-                $requetenotesomme->execute();
+                $requetenotesomme->execute(
+                    array(
+                        ":id_films" =>$_GET["id_film"]
+                    ));
                 $affichesomme = $requetenotesomme->fetch();
 
                 // ici on dit que si on divise par zero alors on met zero pour lamoyenne sinon on fait le calcul
@@ -452,7 +471,12 @@ require_once "includes/bddconnexion.php";
 
                     <?php include('includes/footer.php'); ?>
 
+                    <!-- <script src="js/javascript.js"></script> -->
                     <script src="js/script.js"></script>
+                    <script src="js/navbar.js"></script>
+
+                  
+                    
 </body>
 
 </html>

@@ -840,12 +840,13 @@ height: 100%;
     margin-bottom : 15px;
 }
 
-.ensemblecommentaires textarea{
-    background: black;
-    border : 1px solid red;
-    color : white;
-
-    padding : 5px;
+.ensemblecommentaires textarea {
+    /* background: black; */
+    border: 1px solid red;
+    color: white;
+    padding: 5px;
+    width: 500px;
+    height: 100px;
 }
 
 .ensemblecommentaires input{
@@ -1236,12 +1237,11 @@ hr.style-two2 {
     padding-top : 1%;
     font-size: 25px;
     width: 100%;
-    
 }
 
 .nav-burger-list{
     display: none;
-    margin-top: 0px;
+    margin-top: -2px;
     background-color: black;
 }
 
@@ -1253,7 +1253,7 @@ hr.style-two2 {
     padding-right : 15px;
     padding-bottom : 15px;
     font-weight: bold;
-    
+   
 }
 
 .nav-burger-list a{
@@ -1315,6 +1315,55 @@ margin-bottom : 50px;
 
 
 /* fin de mon inscription  */
+
+.ensemblecommentaires textarea {
+    background: black; 
+    border: 1px solid red;
+    color: white;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+}
+
+.informationfilm {
+    width: 95%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px 0 0px 0;
+}
+
+.informationresume {
+    width: 95%;
+    padding: 20px;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+
+.informationinfo {
+    width: 95%;
+    padding: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding : 20px;
+}
+
+.informationacteurs {
+    width: 95%;
+    padding: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
 
 }
 
